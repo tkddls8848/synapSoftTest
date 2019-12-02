@@ -5,40 +5,40 @@ import java.util.Stack;
 
 public class TestService {
 
-	// °³º° ¹øÈ£ ÀĞ±â
+	// ê°œë³„ ë²ˆí˜¸ ì½ê¸°
 	public static String readNumber(char ch, int unit) {
 		switch (ch) {
 		case '0':
 			return "";
-		// ¸¸ ÀÌ»ó¿¡¸¸ ¼ıÀÚ¸¦ ºÎ¸§
+		// ë§Œ ì´ìƒì—ë§Œ ìˆ«ìë¥¼ ë¶€ë¦„
 		case '1':
 			if (unit == 0) {
-				return "ÀÏ";
+				return "ì¼";
 			} else {
 				return "";
 			}
 		case '2':
-			return "ÀÌ";
+			return "ì´";
 		case '3':
-			return "»ï";
+			return "ì‚¼";
 		case '4':
-			return "»ç";
+			return "ì‚¬";
 		case '5':
-			return "¿À";
+			return "ì˜¤";
 		case '6':
-			return "À°";
+			return "ìœ¡";
 		case '7':
-			return "Ä¥";
+			return "ì¹ ";
 		case '8':
-			return "ÆÈ";
+			return "íŒ”";
 		case '9':
-			return "±¸";
+			return "êµ¬";
 
 		}
 		return "";
 	}
 
-	// ,¿Í ¿ø Á¦¿ÜÇÑ ¹®ÀÚ¿­ ¸¸µé±â
+	// ,ì™€ ì› ì œì™¸í•œ ë¬¸ìì—´ ë§Œë“¤ê¸°
 	public static void numberFilter(String example) {
 
 		ArrayList<Character> arr = new ArrayList<Character>();
@@ -47,7 +47,7 @@ public class TestService {
 
 		for (int i = len - 1; i >= 0; i--) {
 			char ch = example.charAt(i);
-			if (ch == ',' || ch == '¿ø') {
+			if (ch == ',' || ch == 'ì›') {
 				continue;
 			} else {
 				arr.add(ch);
@@ -62,7 +62,7 @@ public class TestService {
 
 	}
 
-	// Ãµ ÀÌ»ó ¼ıÀÚ ´ÜÀ§
+	// ì²œ ì´ìƒ ìˆ«ì ë‹¨ìœ„
 	public static Stack<String> unitNumber(ArrayList<Character> arr) {
 
 		int order = 0;
@@ -74,15 +74,15 @@ public class TestService {
 			char arrNumber = arr.get(j);
 
 			if (j % 4 == 1) {
-				str = str + readNumber(arrNumber, order) + '½Ê';
+				str = str + readNumber(arrNumber, order) + 'ì‹­';
 				stack.push(str);
 				System.out.println("str" + str);
 			} else if (j % 4 == 2) {
-				str = str + readNumber(arrNumber, order) + '¹é';
+				str = str + readNumber(arrNumber, order) + 'ë°±';
 				stack.push(str);
 				System.out.println("str" + str);
 			} else if (j % 4 == 3) {
-				str = str + readNumber(arrNumber, order) + 'Ãµ';
+				str = str + readNumber(arrNumber, order) + 'ì²œ';
 				stack.push(str);
 				System.out.println("str" + str);
 			} else if (j % 4 == 0) {
@@ -97,21 +97,22 @@ public class TestService {
 		return stack;
 	}
 
-	// ¸¸ ÀÌ»ó ¼ıÀÚ ´ÜÀ§
+	// ë§Œ ì´ìƒ ìˆ«ì ë‹¨ìœ„
 	public static String orderNumber(int it) {
 		String order = "";
 		switch (it) {
 		case 0:
-			order = "¿ø";
+			order = "ì›";
 			break;
 		case 1:
-			order = "¸¸ ";
+			//ë§Œ ë‹¨ìœ„ ì´í›„ ë„ì–´ì“°ê¸°
+			order = "ë§Œ ";
 			break;
 		case 2:
-			order = "¾ï";
+			order = "ì–µ";
 			break;
 		case 3:
-			order = "Á¶";
+			order = "ì¡°";
 			break;
 		}
 		return order;
@@ -119,7 +120,7 @@ public class TestService {
 
 	public static void main(String[] args) {
 
-		String example = "1,204,567,890¿ø";
+		String example = "1,204,567,890ì›";
 
 		numberFilter(example);
 
