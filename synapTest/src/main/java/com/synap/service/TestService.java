@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class TestService {
 
 	static String[] num = {"영","일","이","삼","사","오","육","칠","팔","구"};
 	static String[] lowOrder = {"","십","백","천"};
 	static String[] bigOrder = {"원","만","억","조"};
 
-	public static String readNumber(char ch) {
+	public String readNumber(char ch) {
 		
 		String str = "";
 		int i = ch - '0';
@@ -19,7 +22,7 @@ public class TestService {
 		return str;
 	}
 	
-	public static String reString(String str) {
+	public String reString(String str) {
 		
 		int len = str.length();
 		String result = "";
@@ -37,7 +40,7 @@ public class TestService {
 		return result;
 	}
 	
-	public static void solution(String str) {
+	public void solution(String str) {
 		
 		String answer = "";
 		String reStr = reString(str);
@@ -81,13 +84,4 @@ public class TestService {
 		
 	}
 
-	
-	public static void main(String[] args) {
-		
-		String ex;
-		Scanner sc = new Scanner(System.in);
-		ex = sc.nextLine();
-		solution(ex);
-
-	}
 }

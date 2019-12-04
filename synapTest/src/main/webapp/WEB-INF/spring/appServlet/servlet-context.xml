@@ -24,7 +24,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.synap.controller" />
-	
+	<context:component-scan base-package="com.synap.service" />	
 	
 	
 </beans:beans>
