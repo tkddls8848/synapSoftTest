@@ -20,6 +20,7 @@ table {
 }
 </style>
 	<title>사이냅소프트 테스트 페이지</title>
+	<% String context = request.getContextPath(); %>
 </head>
 <body>
 
@@ -32,32 +33,36 @@ table {
 
 <div class='container'>
 
-
-<div class="col-sm-12 text-center">
-<input type="button" id="7" name="7" value="7" onclick='enterText(7)' class="btn btn-lg btn-outline-secondary">
-<input type="button" id="8" name="8" value="8" onclick='enterText(8)' class="btn btn-lg btn-outline-secondary">
-<input type="button" id="9" name="9" value="9" onclick='enterText(9)' class="btn btn-lg btn-outline-secondary">
-</div>
-<div class="col-sm-12 text-center">
-<input type="button" id="4" name="4" value="4" onclick='enterText(4)' class="btn btn-lg btn-outline-secondary">
-<input type="button" id="5" name="5" value="5" onclick='enterText(5)' class="btn btn-lg btn-outline-secondary">
-<input type="button" id="6" name="6" value="6" onclick='enterText(6)' class="btn btn-lg btn-outline-secondary">
-</div>
-<div class="col-sm-12 text-center">
-<input type="button" id="1" name="1" value="1" onclick='enterText(1)' class="btn btn-lg btn-outline-secondary">
-<input type="button" id="2" name="2" value="2" onclick='enterText(2)' class="btn btn-lg btn-outline-secondary">
-<input type="button" id="3" name="3" value="3" onclick='enterText(3)' class="btn btn-lg btn-outline-secondary">
-</div>
-<div>
-<p></p>
-</div>
-<div class="col-sm-12 text-center">
-<input type='text' id='result' value='원' style="text-align:right;">
-<input type='button' onclick='clearText()' value='초기화' class="btn btn-lg btn-secondary">
-<input type='button' onclick='deleteText()' value='지우기' class="btn btn-lg btn-secondary">
-<a href='javascript:submit()'><input type="button" value='제출' class="btn btn-lg btn-primary"></a>
-</div>
-
+	<div id='panel'>
+		<div class="col-sm-12 text-center">
+			<input type="button" id="7" name="7" value="7" onclick='enterText(7)' class="btn btn-lg btn-outline-secondary">
+			<input type="button" id="8" name="8" value="8" onclick='enterText(8)' class="btn btn-lg btn-outline-secondary">
+			<input type="button" id="9" name="9" value="9" onclick='enterText(9)' class="btn btn-lg btn-outline-secondary">
+		</div>
+		<div class="col-sm-12 text-center">
+			<input type="button" id="4" name="4" value="4" onclick='enterText(4)' class="btn btn-lg btn-outline-secondary">
+			<input type="button" id="5" name="5" value="5" onclick='enterText(5)' class="btn btn-lg btn-outline-secondary">
+			<input type="button" id="6" name="6" value="6" onclick='enterText(6)' class="btn btn-lg btn-outline-secondary">
+		</div>
+		<div class="col-sm-12 text-center">
+			<input type="button" id="1" name="1" value="1" onclick='enterText(1)' class="btn btn-lg btn-outline-secondary">
+			<input type="button" id="2" name="2" value="2" onclick='enterText(2)' class="btn btn-lg btn-outline-secondary">
+			<input type="button" id="3" name="3" value="3" onclick='enterText(3)' class="btn btn-lg btn-outline-secondary">
+		</div>
+	</div>
+	
+	<div>
+		<p></p>
+	</div>
+	
+	<div class="col-sm-12 text-center">
+		<form id='getForm' action="<%=context%>/calculate?result=" method="get">
+			<input id='result' name='result' value='원' style="text-align:right;">
+			<input type='button' onclick='clearText()' value='초기화' class="btn btn-lg btn-secondary">
+			<input type='button' onclick='deleteText()' value='지우기' class="btn btn-lg btn-secondary">
+			<input type="submit" value='제출' class="btn btn-lg btn-primary">
+		</form>
+	</div>
 </div>
 
 </body>

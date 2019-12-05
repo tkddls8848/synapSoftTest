@@ -27,7 +27,7 @@ public class SynapController {
 	
 	@RequestMapping(value = "/calculate", method = RequestMethod.GET)
 	public ModelAndView calculate(@RequestParam(defaultValue = "숫자를 입력하시면 결과가 나옵니다.") String result, CalcDTO dto, ModelAndView mv) {
-
+		System.out.println("result"+result);
 		String str = dto.getStr();
 		mv.addObject("String", result);
 		mv.setViewName("home");
