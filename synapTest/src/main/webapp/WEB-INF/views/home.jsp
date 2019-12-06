@@ -49,6 +49,9 @@ table {
 			<input type="button" id="2" name="2" value="2" onclick='enterText(2)' class="btn btn-lg btn-outline-secondary">
 			<input type="button" id="3" name="3" value="3" onclick='enterText(3)' class="btn btn-lg btn-outline-secondary">
 		</div>
+		<div class="col-sm-12 text-center">
+			<input type="button" id="0" name="0" value="0" onclick='enterText(0)' class="btn btn-lg btn-outline-secondary">
+		</div>
 	</div>
 	
 	<div>
@@ -64,6 +67,9 @@ table {
 		</form>
 	</div>
 </div>
+
+<a href="15.165.80.111:8090/project/"><label>포트폴리오 사이트 링크</label></a>
+<a href="15.165.80.111:8090/project/"><label>이력서 다운로드 링크()</label></a>
 
 </body>
 <script type="text/javascript">
