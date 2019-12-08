@@ -68,10 +68,6 @@ table {
 	</div>
 </div>
 
-<div class="col-sm-12 text-center">
-	<a href="15.165.80.111:8090/project/"><label>포트폴리오 사이트 링크</label></a>
-</div>
-
 </body>
 <script type="text/javascript">
 	function clearText(){
